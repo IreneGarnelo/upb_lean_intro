@@ -1,8 +1,9 @@
 import Game.Levels.DemoWorld.L01_HelloWorld
 
 World "DemoWorld"
-Title "Demo World"
+Title "Erste Schritte"
 
 Introduction "
-This introduction is shown before one enters level 1 of the demo world. Use markdown.
+Willkommen! In dieser Welt lernst du die Grundidee von Lean: Terme, Ziele (Goals)
+und wie man mit einfachen Taktiken arbeitet.
 "

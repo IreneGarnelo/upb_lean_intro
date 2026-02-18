@@ -1,26 +1,30 @@
 import Game.Levels.DemoWorld
 
 -- Here's what we'll put on the title screen
-Title "Hello World Game"
+Title "Die Lean-Beweiswerkstatt"
 Introduction
 "
-This text appears on the starting page where one selects the world/level to play.
-You can use **markdown**.
+Willkommen zu der interaktiven Lernumgebung zur Einführung in den Theorembeweiser Lean.
+In dieser Lernumgebung wird anhand mathematisch simpler Aufgaben Lean Schritt für
+Schritt gelernt.
+
+Für diese Lernumgebung sind keine Vorkenntnisse zu Theorembeweisern notwendig.
+
+Es gibt verschiedene Bereiche aus denen du auf der Startseite auswählen kannst.
+Jeder Bereich hat dann mehrere Level. Am besten fängst du mit dem Bereich Erste
+Schritte an.
 "
 
 Info "
-Here you can put additional information about the game. It is accessible
-from the starting through the drop-down menu.
-
-For example: Game version, Credits, Link to Github and Zulip, etc.
-
-Use **markdown**.
+Diese Lernumgebung wurde von Irene Garnelo entwickelt. Dazu wurde die von dem ADAM
+Projekt bereitgestellte Plattform: [Lean Game Server](https://adam.math.hhu.de/#/)
+verwendet.
 "
 
 /-! Information to be displayed on the servers landing page. -/
-Languages "en"
-CaptionShort "Game Template"
-CaptionLong "You should use this game as a template for your own game and add your own levels."
+Languages "de"
+CaptionShort "Einführung in Lean"
+CaptionLong "Eine Einführung auf Deutsch in den Theorembeweiser Lean4 für Mathematikstudierende"
 -- Prerequisites "" -- add this if your game depends on other games
 -- CoverImage "images/cover.png"
 

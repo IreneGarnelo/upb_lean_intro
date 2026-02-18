@@ -1,4 +1,6 @@
-import Game.Levels.DemoWorld.L01_HelloWorld
+import Game.Levels.DemoWorld.L01_Exact
+import Game.Levels.DemoWorld.L02_Rw
+import Game.Levels.DemoWorld.L03_Multiple_rw
 
 World "DemoWorld"
 Title "Erste Schritte"

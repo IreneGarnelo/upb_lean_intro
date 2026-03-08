@@ -1,5 +1,4 @@
 import Game.Metadata
-import Mathlib.Algebra.Group.Basic
 
 World "Vergleiche"
 Level 1

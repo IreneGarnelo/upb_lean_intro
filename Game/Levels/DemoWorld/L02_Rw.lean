@@ -22,7 +22,6 @@ das mit dem `rw` Befehl aus und vergesse nicht das Komma am Ende der Zeile."
 Statement (x : Nat) (h : x = 2) : x*2 = x*x := by
   Hint "Der Beweisschritt lautet `rw [h]`"
   rw [h]
-
 Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/

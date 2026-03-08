@@ -1,3 +1,4 @@
+import Game.Doc.tactics
 import Game.Levels.DemoWorld
 --import Game.Levels.Vergleiche
 import Game.Levels.Gruppen

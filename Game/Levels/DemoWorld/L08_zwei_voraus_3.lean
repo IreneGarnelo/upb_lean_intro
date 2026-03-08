@@ -25,6 +25,6 @@ Statement (x y : Nat)(h: x=2 ∧ y=3) : x+1=y := by
 Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
-
+NewTactic «have»
 -- NewTheorem Nat.add_comm Nat.add_assoc
 -- NewDefinition Nat Add Eq

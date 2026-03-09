@@ -363,3 +363,15 @@ DefinitionDoc Add as "+"
 
 /-- Für eine natürliche Zahl `a` gilt `a * 1 = a`. -/
 TheoremDoc Nat.mul_one as "Nat.mul_one" in "NatZahl"
+
+/-- Die Addition über den natürlichen Zahlen ist kommutativ. Das bedeutet
+für zwei natürliche Zahlen `a` und `b`, dass `a+b=b+a` -/
+TheoremDoc Nat.add_comm as "Nat.add_comm" in "NatZahl"
+
+/-- Die Multiplikation über den natürlichen Zahlen ist kommutativ. Das bedeutet
+für zwei natürliche Zahlen `a` und `b`, dass `a*b=b*a` -/
+TheoremDoc Nat.mul_comm as "Nat.mul_comm" in "NatZahl"
+
+/-- Das Distributivgesetzt für Klammern auf der rechten Seite. Das bedeutet
+für drei natürliche Zahlen `a`, `b` und `c`, dass `a*(b+c)=a*b+a*c`. -/
+TheoremDoc Nat.mul_add as "Nat.mul_add" in "NatZahl"

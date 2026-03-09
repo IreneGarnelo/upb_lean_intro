@@ -2,6 +2,7 @@ import Game.Metadata
 
 World "DemoWorld"
 Level 10
+TheoremTab "NatZahl"
 
 Title "Zwischenziele mit `have` setzen"
 
@@ -47,5 +48,5 @@ Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
--- NewTheorem Nat.add_comm Nat.mul_comm Nat.mul_add
+NewTheorem Nat.add_comm Nat.mul_comm Nat.mul_add
 -- NewDefinition Nat Add Eq

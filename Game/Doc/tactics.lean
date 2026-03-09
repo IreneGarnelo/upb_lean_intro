@@ -70,10 +70,19 @@ TacticDoc «repeat»
 
 /-- Tactic : have
 ## Anleitung
-Die Taktik have in LEAN erlaubt es, einen Zwischenschritt während eines Beweises
-zu definieren, welches bewiesen werden soll um im restlichem Beweis verwendet
+Die Taktik have in LEAN erlaubt es, eine Aussage während eines Beweises
+zu definieren, wenn diese Aussage nicht trivial folgt, dann wird sie als
+Zwischenziel aufgemacht und muss bewiesen werden. Die Aussage kann dann
+im restlichem Beweis verwendet werden.
 zu werden.
 ## Beispiel
+Triviale Beispiele: <br>
+`have h1 := h.left` definiert `h1` als die like Hälfte der Aussage `h`,
+die einen und-Operator enthält. <br>
+`have ha := h a` definiert die Aussage `ha`, indem sie die Aussage
+`h` auf das Objekt `a` anwendet. <br>
+
+Nicht-triviales Beispiel: <br>
 Bei folgendem Zustand:
 ```
 a: ℕ
@@ -82,10 +91,9 @@ h: a + 2 = 4
 ```
 wird
 ```
-have ha : a = 2,
-{...},
+have ha : a = 2 := by
 ```
-das Ziel ha einführen, welches in den Klammern bewiesen werden soll und dann
+das Ziel ha einführen, welches in den Folgezeilen bewiesen werden soll und dann
 im Verlauf des Beweises verwendet werden darf.
 -/
 TacticDoc «have»
@@ -295,3 +303,63 @@ a * b = 1 → a = b⁻¹
 /- Axiom: div_eq_mul_inv {F : Type} [field F] (a b : F):
 a / b = a * b⁻¹
 -/
+
+/-- `Add a b`, with notation `a + b`, is
+the usual sum of natural numbers. Internally it is defined
+via the following two hypotheses:
+
+* `add_zero a : a + 0 = a`
+
+* `add_succ a b : a + succ b = succ (a + b)`
+
+Other theorems about naturals, such as `zero_add a : 0 + a = a`, are proved
+by induction using these two basic theorems.
+-/
+DefinitionDoc Add as "+"
+
+/--
+`a ≤ b` is *notation* for `∃ c, b = a + c`.
+
+Because this game doesn't have negative numbers, this definition
+is mathematically valid.
+
+This means that if you have a goal of the form `a ≤ b` you can
+make progress with the `use` tactic, and if you have a hypothesis
+`h : a ≤ b`, you can make progress with `cases h with c hc`.
+-/
+DefinitionDoc LE as "≤"
+
+/--
+  `Mul a b`, with notation `a * b`, is the usual
+  product of natural numbers. Internally it is
+  via two axioms:
+
+  * `mul_zero a : a * 0 = 0`
+
+  * `mul_succ a b : a * succ b = a * b + a`
+
+Other theorems about naturals, such as `zero_mul`,
+are proved by induction from these two basic theorems.
+-/
+DefinitionDoc Mul as "*"
+
+/--
+`ℕ` sind die natürlichen Zahlen, die in Lean im Modul `Nat` implementiert sind:
+
+* `0 : ℕ` (Null ist eine natürliche Zahl)
+* `succ (n : ℕ) : ℕ` (Der Nachfolger einer natürlichen Zahl ist eine natürliche Zahl)
+-/
+DefinitionDoc Nat as "ℕ"
+
+/-- `Add a b`, mit der Notation `a + b`, ist die
+Addition natürlicher Zahlen. Sie ist wiefolgt auf Grundlage der Peano-Axiome definiert:
+
+* `add_zero a : a + 0 = a`
+
+* `add_succ a b : a + succ b = succ (a + b)`
+
+-/
+DefinitionDoc Add as "+"
+
+/-- Für eine natürliche Zahl `a` gilt `a * 1 = a`. -/
+TheoremDoc Nat.mul_one as "Nat.mul_one" in "NatZahl"

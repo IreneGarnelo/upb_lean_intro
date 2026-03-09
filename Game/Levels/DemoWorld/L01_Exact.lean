@@ -6,19 +6,12 @@ Level 1
 Title "Dear Aufbau von Lean-Sätzen"
 
 Introduction "# Struktur in Lean
-Die Struktur von Sätzen mit Beweis in Lean ist wiefolgt:
+Die Struktur von Sätzen mit Beweis in der Lean-Lernumgebung ist wiefolgt:
 
 ```
-theorem Name (Voraussetzung 1) (Voraussetzung 2) : Folgerung :=
-begin
-...
-end
+Statement (Voraussetzung 1) (Voraussetzung 2) : Folgerung := by
+Beweis
 ```
-
-Dabei kann der Name beliebig gewählt werden, sollte aber möglichst einen Einblick in
-die Aussage des Satzes geben (in Lean heißt zum Beispiel der Satz zur Kommutativität
-der Addition `add_comm`). Die Anzahl an Voraussetzungen kann variieren, es wurden nur
-beispielhaft zwei vorgegeben. Zwischen `begin` und `end` stehen dann die Beweisschritte.
 
 # `sorry` Keywort
 
@@ -30,10 +23,10 @@ zu tun ist. Lösche als Erstes das sorry, um mit dem Beweis zu starten.
 
 # Beweisschritte
 In Lean löst man Beweise, indem man Taktiken verwendet, die Beweisschritte
-abbilden. Nach jedem Beweischritt muss man ein `,` einfügen, um dem Program mitzuteilen,
+abbilden. Nach jedem Beweischritt muss man mit Enter eine neue Zeile starten, um dem Program mitzuteilen,
 dass er den Schritt verarbeiten kann. In diesem Level werden wir die `exact` Taktik kennenlernen.
 Diese kann verwendet werden, wenn eine der Aussagen `h`, die man in dem Beweiszustand sieht mit dem
-Beweisziel übereinstimmt. Dann schreibt man `exact h,`. Das bedeutet in etwa so viel wie: 'Die zu
+Beweisziel übereinstimmt. Dann schreibt man `exact h`. Das bedeutet in etwa so viel wie: 'Die zu
 Beweisende Aussage ist exakt die Aussage h.'
 
 Es gibt viele Taktiken in Lean, du kannst den Teil davon, den du für diese Lernumgebung
@@ -41,7 +34,7 @@ brauchst in der linken Spalte unter 'Tactics' finden, wir werden diese aber Schr
 Schritt einführen.
 
 # Erste Aufgabe
-Wir möchten nun diese Taktik verwenden, um folgenden Satz zu zeigen: <br>
+Wir möchten nun diese Taktik verwenden, um folgenden Satz zu beweisen: <br>
 Sei $x$ eine natürliche Zahl und $x=2$. Dann ist $x=2$. <br>
 Lies als erstes die Formulierung in Lean und versuche den Satz dort wiederzuerkennen.
 Nutze dann die `exact` Taktik um den Beweis zu lösen."
@@ -50,8 +43,6 @@ Statement (x : Nat) (h : x = 2) : x = 2 := by
   Hint "Der Beweisschritt lautet `exact h`"
   exact h
 Conclusion "Beweis geschafft!"
-
-/- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
 NewTactic exact
 -- NewTheorem Nat.add_comm Nat.add_assoc

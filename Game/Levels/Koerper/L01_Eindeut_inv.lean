@@ -34,5 +34,6 @@ Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
--- NewTheorem Nat.add_comm Nat.add_assoc
+NewTactic rintro
+NewTheorem mul_comm
 -- NewDefinition Nat Add Eq

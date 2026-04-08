@@ -20,6 +20,6 @@ Statement (a : Nat) (h : a ≤ 4) : ¬ a > 4 := by
 Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
-
+NewTactic push_neg
 -- NewTheorem Nat.add_comm Nat.add_assoc
 -- NewDefinition Nat Add Eq

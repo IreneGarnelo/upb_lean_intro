@@ -82,5 +82,5 @@ Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
--- NewTheorem Nat.add_comm Nat.add_assoc
+NewTheorem succ_le_of_lt le_antisymm hr_succ_le_m succ_eq_add_one
 -- NewDefinition Nat Add Eq

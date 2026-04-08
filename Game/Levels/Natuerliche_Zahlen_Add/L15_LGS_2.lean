@@ -41,6 +41,6 @@ Statement (a b : Nat) (h : a+b+3=8 ∧ a=b+1) : a=3 ∧ b=2 := by
 Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
-
+NewTactic constructor
 -- NewTheorem Nat.add_comm Nat.add_assoc
 -- NewDefinition Nat Add Eq

@@ -44,4 +44,5 @@ Conclusion "Beweis geschafft!"
 
 
 NewTheorem mul_inv_rev
+NewTactic intros
 -- NewDefinition Nat Add Eq

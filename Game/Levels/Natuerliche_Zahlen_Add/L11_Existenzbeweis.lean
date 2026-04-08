@@ -37,6 +37,6 @@ Statement : ∃ a b : Nat, a + b = 10 := by
 Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
-
+NewTactic use
 -- NewTheorem Nat.add_comm Nat.add_assoc
 -- NewDefinition Nat Add Eq

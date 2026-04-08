@@ -52,6 +52,6 @@ Statement : ¬ ∃ (a b : Nat), b ≥ 1 ∧ a < 4 ∧ a = b * 4 := by
 Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
-
--- NewTheorem Nat.add_comm Nat.add_assoc
+NewTactic by_contra
+NewTheorem Nat.mul_le_mul_right
 -- NewDefinition Nat Add Eq

@@ -33,5 +33,5 @@ Sprache aus? Formuliere dazu die Beweise add_comm und mul_comm schriftlich aus."
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
--- NewTheorem Nat.add_comm Nat.add_assoc
+NewTheorem Nat.zero_mul Nat.succ_mul
 -- NewDefinition Nat Add Eq

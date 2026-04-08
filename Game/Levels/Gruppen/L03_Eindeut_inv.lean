@@ -32,6 +32,6 @@ b = c := by
   rw [mul_assoc]
 Conclusion "Beweis geschafft!"
 
-NewTactic conv
+NewTactic conv lhs
 -- NewTheorem Nat.add_comm Nat.add_assoc
 -- NewDefinition Nat Add Eq

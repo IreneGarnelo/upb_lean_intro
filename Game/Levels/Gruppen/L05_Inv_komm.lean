@@ -37,6 +37,6 @@ Statement {G : Type} [Group G]
   exact h1.symm
 Conclusion "Beweis geschafft!"
 
-NewTactic specialize
--- NewTheorem Nat.add_comm Nat.add_assoc
+NewTactic specialize congrArg
+NewTheorem inv_inv
 -- NewDefinition Nat Add Eq

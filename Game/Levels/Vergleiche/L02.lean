@@ -27,6 +27,5 @@ Conclusion "Text that appears after the proof is finished."
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
-NewTactic rw
 -- NewTheorem Nat.add_comm Nat.add_assoc
 -- NewDefinition Nat Add Eq

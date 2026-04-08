@@ -5,7 +5,7 @@ Level 6
 
 Title "Falls $y^{-1} cdot x^{-1} cdot y cdot x = 1$, dann ist $G$ abelsch"
 
-Introduction "Zuletzt möchten wir für Gruppen zeigen, dass falls $y^{-1} cdot x^{-1} cdot y cdot x = 1$ für
+Introduction "Zuletzt möchten wir für Gruppen zeigen, dass falls $y^{-1} \\cdot x^{-1} cdot y cdot x = 1$ für
 alle $x,y in G$ gilt, die Gruppe abelsch ist. Gehe dazu wiefolgt vor:
 Zeige zunächst, dass die Voraussetzungen des Lemmas in level 5 erfüllt sind. Führe dazu
 ein Zwischenziel ein (für diesen Teil kannst du `eq_inv_of_mul_eq_one` und `mul_inv_rev` verwenden).

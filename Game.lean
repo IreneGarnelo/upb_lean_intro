@@ -27,11 +27,6 @@ Diese Lernumgebung wurde von Irene Garnelo entwickelt. Dazu wurde die von dem AD
 Projekt bereitgestellte Plattform: [Lean Game Server](https://adam.math.hhu.de/#/)
 verwendet.
 "
-Dependency DemoWorld → Gruppen
-Dependency Gruppen → Koerper
-Dependency DemoWorld → Natuerliche_Zahlen_Add
-Dependency Natuerliche_Zahlen_Add → Natuerliche_Zahlen_Mult
-Dependency Natuerliche_Zahlen_Mult → Natuerliche_Zahlen_Div
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "de"

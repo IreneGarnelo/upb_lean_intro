@@ -375,3 +375,19 @@ TheoremDoc Nat.mul_comm as "Nat.mul_comm" in "NatZahl"
 /-- Das Distributivgesetzt für Klammern auf der rechten Seite. Das bedeutet
 für drei natürliche Zahlen `a`, `b` und `c`, dass `a*(b+c)=a*b+a*c`. -/
 TheoremDoc Nat.mul_add as "Nat.mul_add" in "NatZahl"
+
+/-- Multiplikation mit dem neutralen Element:
+Für eine natürliche Zahl `a` gilt `1 * a = a`. -/
+TheoremDoc one_mul as "one_mul" in "Gruppen"
+
+/-- Multiplikation mit dem neutralen Element:
+Für eine natürliche Zahl `a` gilt `a * 1 = a`. -/
+TheoremDoc mul_one as "mul_one" in "Gruppen"
+
+/-- Assoziativität in Gruppen:
+für drei Elemente `a`, `b` und `c` gilt `a*b*c=a*(b*c)`. -/
+TheoremDoc mul_assoc as "mul_assoc" in "Gruppen"
+
+/-- Inverse eines Produkts:
+für zwei Elemente `a` und `b` gilt `(a*b)^-1=b^-1*a^-1`. -/
+TheoremDoc mul_inv_rev as "mul_inv_rev" in "Gruppen"

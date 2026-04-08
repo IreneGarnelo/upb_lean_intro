@@ -2,6 +2,7 @@ import Game.Metadata
 
 World "Gruppen"
 Level 3
+TheoremTab "Gruppen"
 
 Title "Das inverse Element ist eindeutig"
 
@@ -30,8 +31,6 @@ b = c := by
   rw [← hb.1]
   rw [mul_assoc]
 Conclusion "Beweis geschafft!"
-
-/- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
 NewTactic conv
 -- NewTheorem Nat.add_comm Nat.add_assoc

@@ -24,13 +24,13 @@ sie aber in den Klammern bewiesen werden.
 
 In diesem Level könnte der Beweis dann so aussehen:
 ```
-have ha : a = 2,
-{sorry,}, -- Beweise ha, du kannst dazu linarith verwenden
-sorry,    -- Beweise nun mithilfe von ha das Beweisziel
+have ha : a = 2 := by
+ sorry -- Beweise ha, du kannst dazu linarith verwenden
+sorry    -- Beweise nun mithilfe von ha das Beweisziel
 ```
 Kopiere diesen Code und ergänze die beiden sorry.
 
-Sei $a in mathbb{N}$ mit $a+2=4$. Dann ist $a + 3=5$.
+Sei $a \\in \\mathbb{N}$ mit $a+2=4$. Dann ist $a + 3=5$.
 "
 
 Statement (a : Nat) (h : a + 2 = 4): a + 3 = 5 := by

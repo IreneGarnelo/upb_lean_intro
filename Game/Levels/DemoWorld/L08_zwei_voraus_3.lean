@@ -8,7 +8,7 @@ Title "Zwei Voraussetzungen - Teil 3"
 Introduction "Wir haben die exakte Aufgabe wie zuvor, möchten aber nun sehen, dass wir den
 beiden Aussagen, die mit einem und-Operator verbunden wurden, Namen geben können
 um diese wieder einzeln verweden zu können. Das lohnt sich insbesondere wenn man
-in einem Beweis die Teilaussagen öfter braucht. Dazu verwendet man `have` wiefolgt: <br>
+in einem Beweis die Teilaussagen öfter braucht. Dazu verwendet man `have` wiefolgt:
 `have h1 := h.left`. Statt `h1` kann man einen beliebigen Namen wählen.
 
 Führe in der unteren Aufgabe die Aussagen `h1` und `h2` ein und benutze sie um den Beweis

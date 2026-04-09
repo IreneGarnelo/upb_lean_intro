@@ -15,16 +15,15 @@ unvollständigen Beweis vervollständigen.
 
 Kopiere dazu folgenden unvollständigen Beweis in die Aufgabe:
 ```
-induction b with d hd,
-  {rw [add_zero],
-  rw [add_zero],},
-  {sorry,},
+induction b
+· rw [Nat.add_zero]
+· sorry
 ```
 Klicke dich durch den Beweis und achte dabei auf den Beweiszustand und wie er sich
 mit den unterschiedlichen Beweisschritten ändert. Zu ergänzen ist der Induktionsschritt,
-der zurzeit noch durch `sorry,` platzhaltend 'gelöst' ist.
+der zurzeit noch durch `sorry` platzhaltend 'gelöst' ist.
 
-Lösche dieses `sorry,` und ergänze den Induktionsschritt.
+Lösche dieses `sorry` und ergänze den Induktionsschritt.
 
 Seien $a, b in mathbb{N}$. Dann ist `succ`$(a)+b = $`succ`$(a+b)$.
 "

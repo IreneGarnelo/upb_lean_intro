@@ -11,5 +11,5 @@ World "Natuerliche_Zahlen_Div"
 Title "Natürliche Zahlen: Division"
 
 Introduction "
-TODO
+
 "

@@ -24,7 +24,7 @@ Seien $x$ und $y \\in \\mathbb{N}$ mit $x=2$ und $y=x+1$. Dann ist $y=3$.
 
 Statement (x y : Nat)(h1: x=2)(h2 : y=x+1) : y=3 := by
   rw [h1] at h2
-  Hint "`h2` ist nun gleich zu dem Beweisziel. Mit welcher Taktik kannst du nun den Beweis schließen?"
+  Hint (hidden := true) "`h2` ist nun äquivalent zu dem Beweisziel. Mit welcher Taktik kannst du nun den Beweis schließen?"
   exact h2
 Conclusion "Beweis geschafft!"
 

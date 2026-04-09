@@ -7,7 +7,7 @@ Level 5
 Title "Die Zahl $1$"
 
 Introduction "Aus praktischen Gründen möchten wir nun dem Nachfolger von $0$ einen Namen
-geben. Diese Zahl nennen wir $1$ (in Lean `one`). Die Aussage `one = succ(zero)` heißt in
+geben. Diese Zahl nennen wir $1$ (in Lean `one`). Die Aussage `one = succ zero` heißt in
 LEAN `one_eq_succ_zero`.
 
 Nun können wir zeigen, dass der Nachfolger von $a$ gleich $a+1$ ist. Löse

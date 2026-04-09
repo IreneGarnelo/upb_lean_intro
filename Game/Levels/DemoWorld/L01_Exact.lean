@@ -7,19 +7,12 @@ Title "Dear Aufbau von Lean-Sätzen"
 
 Introduction "# Struktur in Lean
 Die Struktur von Sätzen mit Beweis in der Lean-Lernumgebung ist wiefolgt:
-
 ```
-Statement (Voraussetzung 1) (Voraussetzung 2) : Folgerung := by
+Statement (Voraussetzung 1)
+          (Voraussetzung 2) :
+          Folgerung := by
 Beweis
 ```
-
-# `sorry` Keywort
-
-Zu Beginn der Bearbeitung steht im Beweis immer sorry. Dies ist ein Keyword, was so viel
-bedeutet wie: 'Hier fehlt ein Teil des Beweises'. Du kannst dieses Keyword verwenden, wenn
-ein Beweis überprüft werden soll, bei dem dir noch ein Teil fehlt. LEAN wird bestätigen,
-dass der Beweis stimmt, aber mit dem warning '`uses sorry`' darauf hinweisen, dass noch etwas
-zu tun ist. Lösche als Erstes das sorry, um mit dem Beweis zu starten.
 
 # Beweisschritte
 In Lean löst man Beweise, indem man Taktiken verwendet, die Beweisschritte
@@ -28,14 +21,13 @@ dass er den Schritt verarbeiten kann. In diesem Level werden wir die `exact` Tak
 Diese kann verwendet werden, wenn eine der Aussagen `h`, die man in dem Beweiszustand sieht mit dem
 Beweisziel übereinstimmt. Dann schreibt man `exact h`. Das bedeutet in etwa so viel wie: 'Die zu
 Beweisende Aussage ist exakt die Aussage h.'
-
 Es gibt viele Taktiken in Lean, du kannst den Teil davon, den du für diese Lernumgebung
-brauchst in der linken Spalte unter 'Tactics' finden, wir werden diese aber Schritt für
+brauchst in der rechten Spalte unter 'Tactics' finden, wir werden diese aber Schritt für
 Schritt einführen.
 
 # Erste Aufgabe
-Wir möchten nun diese Taktik verwenden, um folgenden Satz zu beweisen: <br>
-Sei $x$ eine natürliche Zahl und $x=2$. Dann ist $x=2$. <br>
+Wir möchten nun diese Taktik verwenden, um folgenden Satz zu beweisen:
+Sei $x$ eine natürliche Zahl und $x=2$. Dann ist $x=2$.
 Lies als erstes die Formulierung in Lean und versuche den Satz dort wiederzuerkennen.
 Nutze dann die `exact` Taktik um den Beweis zu lösen."
 

@@ -16,7 +16,7 @@ und wäre fertig. Wir wollen uns aber die Frage stellen, wie man eine Aussage
 wie `h`, die ein 'und' (`∧`) enthält in zwei Aussagen einteilen kann, damit man
 sie einzeln verwenden kann.
 
-Dazu gibt es die Tactic `cases`. Für eine Aussage `h : h1 ∧ h2` teilt `cases h with f g,`
+Dazu gibt es die Tactic `rcases`. Für eine Aussage `h : h1 ∧ h2` teilt `rcases h with ⟨f, g⟩`
 die Aussage auf, sodass man die Aussagen `f : h1` und `g : h2` erhält. Die Namen der
 neuen Aussagen können wie hier (`f g`) explizit angegeben werden oder werden ansonsten
 von LEAN vergeben.
@@ -28,7 +28,7 @@ dass `hab` die Gleichung ist die sowohl `a` wie auch `b` enthält und `ha` nur `
 2. Setzte mithilfe von `rw` die Gleichung `hb` in `hab` ein.
 3. Nutze `linarith` um mit Umformungen den Beweis zu beenden.
 
-Seien $a, b in mathbb{N}$ mit $a+b=8$ und $b=3$. Dann ist $a=5$.
+Seien $a, b \\in \\mathbb{N}$ mit $a+b=8$ und $b=3$. Dann ist $a=5$.
 "
 
 Statement (a b : Nat) (h : a+b=8 ∧ b=3) : a = 5 := by

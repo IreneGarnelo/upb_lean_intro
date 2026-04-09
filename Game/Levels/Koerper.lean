@@ -8,5 +8,6 @@ World "Koerper"
 Title "Körper"
 
 Introduction "
-TODO
+In dieser Welt werden wir Körper und einige deren Eigenschaften einführen
+und beweisen.
 "

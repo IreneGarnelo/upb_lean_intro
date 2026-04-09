@@ -18,18 +18,18 @@ Der Zustand ist:
 ```
 ⊢ ∃ (a b : ℕ), a + b = 10
 ```
-Mit `use [4,6],` wird das Beweisziel ersetzt durch `⊢ 4 + 6 = 10`, was den
+Mit `use [4,6]` wird das Beweisziel ersetzt durch `⊢ 4 + 6 = 10`, was den
 Beweis direkt löst.
 Probier diesen Schritt direkt im Beweis aus. Du kannst $4$ und $6$ nun auch durch
 andere Zahlenpaare ersetzen, die $10$ ergeben. Probiere zuletzt noch aus, den
 Schritt einzuteilen in:
 ```
-use [4],
-use [6],
+use [4]
+use [6]
 ```
 dann kannst du im Zwischenschritt nachvollziehen, was `use` verändert hat.
 
-Für welches $a in mathbb{N}$ kann der Beweis mit `repeat{use [a],},` gelöst werden?
+Für welches $a in mathbb{N}$ kann der Beweis mit `repeat use [a]` gelöst werden?
 "
 
 Statement : ∃ a b : Nat, a + b = 10 := by

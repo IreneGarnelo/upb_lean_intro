@@ -13,12 +13,12 @@ fast richtigen Beweis korrigieren.
 
 Kopiere dazu folgenden Beweis mit Fehler in die Aufgabe:
 ```
-induction b with d hd,
-{rw [add_zero(a)],
-rw [zero_add(a)],},
-{rw [add_succ(a)],
-rw [hd],
-rw [succ_add(b)],},
+induction b
+· rw [Nat.add_zero a]
+  rw [Nat.zero_add a]
+· rw [add_succ a]
+  rw [a_1]
+  rw [succ_add b]
 ```
 Klicke dich durch den Beweis und achte dabei auf den Beweiszustand und wie er sich
 mit den unterschiedlichen Beweisschritten ändert. Zu korrigieren ist der Induktionsschritt.

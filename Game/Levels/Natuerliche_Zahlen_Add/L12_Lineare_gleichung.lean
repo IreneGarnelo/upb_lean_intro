@@ -15,7 +15,7 @@ Dazu gibt es die Tactic `linarith`, die automatisch den Beweiszustand mithilfe
 der gegebenen Aussagen und linearen arithmetischen Operationen vereinfacht.
 Du kannst diesen Beweis lösen, indem du einfach `linarith,` schreibst.
 
-Sei $a in mathbb{N}$ mit $a+3=5$. Dann ist a=5.
+Sei $a \\in \\mathbb{N}$ mit $a+3=5$. Dann ist a=5.
 "
 
 Statement (a : Nat) (h : a+3=8) : a=5 := by

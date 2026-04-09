@@ -19,7 +19,7 @@ TacticDoc exact
 /-- Tactic : rw
 ## Anleitung
 Wenn `h` eine Aussage des Typs `X = Y` ist, dann wird
-`rw [h],` alle `X` in der zu beweisenden Aussage durch
+`rw [h]` alle `X` in der zu beweisenden Aussage durch
 `Y` austauschen.
 Um alle `Y` durch `X` zu ersetzten verwendet man `rw [← h]`.
 ## Beispiel
@@ -29,7 +29,7 @@ x : N
 h : x + 0 = 0
 ⊢ succ (x + 0) = succ (x)
 ```
-wird `rw [h],` das Ziel umändern zu `⊢ succ (x) = succ (x)`,
+wird `rw [h]` das Ziel umändern zu `⊢ succ (x) = succ (x)`,
 und damit den Beweis abschließen.
 ## Erweitert
 1. Man kann einen konkreten Teil des Zustands konkretisieren,
@@ -39,8 +39,8 @@ x y : N
 h : x + 1 = y
 ⊢ x + 0 + 1 = y + 0
 ```
-wird `rw [add_zero(x)],` den Zustand zu `x + 1 = y + 0` ändern und
-`rw [add_zero(y)],` zu `x + 0 + 1 = y`
+wird `rw [add_zero x]` den Zustand zu `x + 1 = y + 0` ändern und
+`rw [add_zero y]` zu `x + 0 + 1 = y`
 2. Man kann rw auch auf gegebene Aussagen anwenden statt auf
 den Beweiszustand.Bei dem Zustand:
 ```
@@ -48,22 +48,22 @@ x : N
 h : x + 0 = 3
 ⊢ x = 3 + 0
 ```
-wird `rw [add_zero] at h,` den Beweiszustand nicht ändern, dafür aber
+wird `rw [add_zero] at h` den Beweiszustand nicht ändern, dafür aber
 `h` umformen zu `h : x = 3`
 -/
 TacticDoc rw
 
 /-- Tactic : repeat
 ## Anleitung
-für einen Beweisschritt `step,`, führt `repeat {step,},` so oft den
+für einen Beweisschritt `step`, führt `repeat {step}` so oft den
 Beweisschritt aus wie es möglich ist.
 ## Beispiel
 Bei folgendem Zustand:
 ```
-a : N,
+a : N
 ⊢ a + 0 + 0 + 0 = a
 ```
-wird `repeat{rw [add_zero],},` dreimal den Befehl `rw [add_zero]` anwenden
+wird `repeat{rw [add_zero]}` dreimal den Befehl `rw [add_zero]` anwenden
 und somit das Beweisziel zu `a=a` umformen und den Beweis schließen.
 -/
 TacticDoc «repeat»
@@ -74,15 +74,14 @@ Die Taktik have in LEAN erlaubt es, eine Aussage während eines Beweises
 zu definieren, wenn diese Aussage nicht trivial folgt, dann wird sie als
 Zwischenziel aufgemacht und muss bewiesen werden. Die Aussage kann dann
 im restlichem Beweis verwendet werden.
-zu werden.
 ## Beispiel
-Triviale Beispiele: <br>
+Triviale Beispiele:
 `have h1 := h.left` definiert `h1` als die like Hälfte der Aussage `h`,
-die einen und-Operator enthält. <br>
+die einen und-Operator enthält.
 `have ha := h a` definiert die Aussage `ha`, indem sie die Aussage
-`h` auf das Objekt `a` anwendet. <br>
+`h` auf das Objekt `a` anwendet.
 
-Nicht-triviales Beispiel: <br>
+Nicht-triviales Beispiel:
 Bei folgendem Zustand:
 ```
 a: ℕ
@@ -97,6 +96,15 @@ das Ziel ha einführen, welches in den Folgezeilen bewiesen werden soll und dann
 im Verlauf des Beweises verwendet werden darf.
 -/
 TacticDoc «have»
+
+/-- Tactic : sorry
+## Anleitung
+Sorry ist ein Keyword, was so viel bedeutet wie: 'Hier fehlt ein Teil des Beweises'.
+Du kannst dieses Keyword verwenden, wenn ein Beweis überprüft werden soll, bei dem
+dir noch ein Teil fehlt. LEAN wird bestätigen, dass der Beweis stimmt, in dem er No goals
+ausgibt, das aber nicht Level complete steht weist darauf hin, dass noch etwas zu tun ist.
+-/
+TacticDoc «sorry»
 
 /-- Tactic : conv
 ## Anleitung
@@ -113,7 +121,9 @@ h : x + y = y + x
 ```
 kann `conv` genutzt werden, um nur die linke Seite des Ziels zu verändern:
 ```
-conv { to_lhs, rw h, },
+conv =>
+    lhs
+    rw [h]
 ```
 Das Ziel wird dadurch zu:
 ```
@@ -131,7 +141,7 @@ Bei folgendem Zustand:
 ```
 ⊢ ∀ x : ℕ, x + 0 = x
 ```
-kann `intro x,` genutzt werden, um `x` als eine Annahme einzuführen:
+kann `intro x` genutzt werden, um `x` als eine Annahme einzuführen:
 ```
 x : ℕ
 ⊢ x + 0 = x
@@ -165,7 +175,7 @@ Bei folgendem Zustand:
 h : ∀ x : ℕ, x + 0 = x
 ⊢ 3 + 0 = 3
 ```
-kann `specialize h 3,` genutzt werden, um h auf den Wert 3 anzuwenden:
+kann `specialize h 3` genutzt werden, um h auf den Wert 3 anzuwenden:
 ```
 h : 3 + 0 = 3
 ⊢ 3 + 0 = 3
@@ -175,7 +185,7 @@ TacticDoc specialize
 
 /-- Tactic : cases
 ## Anleitung
-Für eine Aussage `h : h1 ∧ h2` teilt `cases h with f g,`
+Für eine Aussage `h : h1 ∧ h2` teilt `cases h with f g`
 die Aussage auf, sodass man die Aussagen `f : h1` und `g : h2` erhält.
 ## Beispiel
 Bei folgendem Zustand:
@@ -184,7 +194,7 @@ ab: ℕ
 h: a + b = 8 ∧ b = 3
 ⊢ a = 5
 ```
-führt `cases h with hab hb,` zu:
+führt `cases h with hab hb` zu:
 ```
 ab: ℕ
 hab: a + b = 8
@@ -197,19 +207,21 @@ TacticDoc cases
 
 /-- Tactic : by_cases
 ## Anleitung
-`by_cases h : ha,` startet eine Fallunterscheidung. In einem Fall gilt `h : ha` und im
+`by_cases h : ha` startet eine Fallunterscheidung. In einem Fall gilt `h : ha` und im
 anderen gilt `h : ¬ha`. In beiden muss das ursprüngliche Beweisziel gezeigt werden.
 ## Beispiel
 Wenn
-man in LEAN `by_cases h: a>4,` verwendet, dann teilt LEAN den Beweiszustand in zwei
+man in LEAN `by_cases h: a>4` verwendet, dann teilt LEAN den Beweiszustand in zwei
 Teile. In beiden ist das Beweisziel das gleiche, in einem haben wir jedoch die
 Aussage `h : a>4` und in dem anderen die Aussage `h : ¬ a>4`. Wie bei anderen Tactics
 die den Beweis aufteilen kannst du auch hier Klammern verwenden und somit folgende
 Struktur verwenden:
 ```
-by_cases h: a>4,
-{},
-{},
+by_cases h: a>4
+· left
+  sorry
+· right
+  sorry
 ```
 -/
 TacticDoc by_cases
@@ -218,7 +230,7 @@ TacticDoc by_cases
 ## Anleitung
 Wenn die Voraussetzungen eines anderen Satz in dem Beweiszustand
 gegeben sind und das Beweisziel das Ergebnis dieses Satzes ist, kann
-mit `apply Satz Voraussetzungen,` das Ziel gelöst werden.
+mit `apply Satz Voraussetzungen` das Ziel gelöst werden.
 ## Beispiel
 Wenn zum Beispiel der Satz:
 ```
@@ -231,7 +243,7 @@ c d : ℕ
 hc: ∃ (e : ℕ), c = 2 * e
 ⊢ ∃ (f : ℕ), c * d = 2 * f
 ```
-ist kann man `apply mul_gerade c d hc,` angewandt werden um den Beweis
+ist kann man `apply mul_gerade c d hc` angewandt werden um den Beweis
 zu lösen. Wichtig ist die Reihenfolge der Voraussetzungen.
 -/
 TacticDoc apply

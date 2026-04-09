@@ -4,25 +4,25 @@ open MulZeroClass
 World "Koerper"
 Level 3
 
-Title "Wenn das Produkt $0$ ist, dann ist einer der Faktoren $0$"
+Title "Wenn das Produkt 0 ist, dann ist einer der Faktoren 0"
 
 Introduction "In diesem Beweis werden wir eine Fallunterscheidung durchführen. Das tut man in
 Lean mit `by cases`. Die Struktur dieser Taktik siehr wiefolgt aus:
 ```
-by_cases hx : x = 0,
-{sorry,},
-{sorry,},
+by_cases hx : x = 0
+  sorry
+  sorry
 ```
-In diesem Beispiel wird zwischen dem Fall $x=0$ und dem Fall $x \neq 0$ unterschieden.
+In diesem Beispiel wird zwischen dem Fall $x=0$ und dem Fall $x \\neq 0$ unterschieden.
 Eine weitere Besonderheit dieses Levels ist es, dass im Beweisziel ein oder-Operator
 ist. In solchen fällen kann man in verschiedenen Scopes angeben ob man gerade zeigt, dass
 der linke oder der rechte Fall gilt. In Kombination mit `by_cases` sieht das wiefolgt aus:
 ```
-by_cases hx : x = 0,
-{left,
-sorry,},
-{right,
-sorry,},
+by_cases hx : x = 0
+  · left
+    sorry
+  · right
+    sorry
 ```
 
 Für $x, y \\in F$ gilt: falls $x \\cdot y = 0$ dann ist $x=0$ oder $y=0$.

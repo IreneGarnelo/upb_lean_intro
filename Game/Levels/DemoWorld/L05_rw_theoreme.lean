@@ -6,9 +6,9 @@ TheoremTab "NatZahl"
 
 Title "`rw` und gegebene Sätze"
 
-Introduction "Man kann die Taktik `rw` auch in Verknüpfüng mit bekannten Sätze verwenden. In
+Introduction "Man kann die Taktik `rw` auch in Verknüpfüng mit bekannten Sätzen verwenden. In
 Lean ist viel der Mathematik mit der wir an der Uni arbeiten implementiert und kann
-in Beweisen verwendet werden. In der linken Spalte findest du unter 'Theorem statements'
+in Beweisen verwendet werden. In der rechten Spalte findest du unter 'Theorems'
 einiger solche Sätze, die für diese Lernumgebung nützlich sein könnten.
 
 Einer dieser Sätze ist `Nat.mul_one` und sagt aus, dass für eine natürliche Zahl

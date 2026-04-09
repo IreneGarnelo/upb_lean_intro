@@ -9,5 +9,6 @@ World "Gruppen"
 Title "Gruppen"
 
 Introduction "
-TODO
+In dieser Welt werden wir Gruppen und einige deren Eigenschaften einführen
+und beweisen.
 "

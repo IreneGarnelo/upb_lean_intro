@@ -14,13 +14,13 @@ einem `b` ersetzten. Man kann angeben, an welcher Stelle des Beweiszieles die Au
 angewandt werden soll, indem man `rw [h x]` schreibt. Wenn nur eine Stelle möglich ist,
 dann kann man das Argument weglassen.
 
-Wir werden folgende Aussage zeigen: <br>
-Sei $x$ eine natürliche Zahl und $x=2$. Dann ist $x \\cdot 2=2 \\cdot 2$. <br>
+Wir werden folgende Aussage zeigen:
+Sei $x$ eine natürliche Zahl und $x=2$. Dann ist $x \\cdot 2=2 \\cdot 2$.
 Dazu muss man die gegebene Aussage $x=2$ einfach in das Beweisziel einsetzen. Probiere
 das mit dem `rw` Befehl aus."
 
 Statement (x : Nat) (h : x = 2) : x*2 = x*x := by
-  Hint "Der Beweisschritt lautet `rw [h]`"
+  Hint (hidden := true) "Der Beweisschritt lautet `rw [h]`"
   rw [h]
 Conclusion "Beweis geschafft!"
 

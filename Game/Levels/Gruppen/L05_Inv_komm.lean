@@ -3,7 +3,7 @@ import Game.Metadata
 World "Gruppen"
 Level 5
 
-Title "Falls Inverse kommutieren, dann ist $G$ abelsch"
+Title "Falls Inverse kommutieren, dann ist G abelsch"
 
 Introduction "Wir werden uns nun folgendes Lemma anschauen, welches wir in der nächsten Aufgabe
 anwenden werden. Du musst diesen Beweis nicht selber führen, sondern kannst ihr

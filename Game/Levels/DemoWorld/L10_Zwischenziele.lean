@@ -14,16 +14,22 @@ sagen, dass `have` neue Aussagen einführt, die man dann zu Beweisen hat.
 Im Fall der und-Aussagen ist der Beweis trivialerweise durch die und-Aussage
 gegeben.
 
-In der untenstehenden Aufgabe möchten wir zeigen, dass für natürliche
+In dieser Aufgabe möchten wir zeigen, dass für natürliche
 Zahlen $a,b,c$ gilt, dass $(a + b) \\cdot c = b \\cdot c + a \\cdot c$.
 Statt direkt mit diesem Ziel zu beginnen können wir uns als erstes
-vornehmen, das Kommutativgesetzt in der Variante, in der die Summanden
-vor dem Produkt stehen, zu zeigen. Dazu schreiben wir:
+vornehmen, das Kommutativgesetzt in diser Variante zu zeigen:
 ```
  have h : (a + b) * c = a * c + b * c := by
   sorry
 ```
-Das sorry muss nun noch mit dem Beweis für die Aussage `h` ersetzt werden,
+
+# `sorry` Keywort
+Sorry ist ein Keyword, was so viel bedeutet wie: 'Hier fehlt ein Teil des Beweises'.
+Du kannst dieses Keyword verwenden, wenn ein Beweis überprüft werden soll, bei dem
+dir noch ein Teil fehlt. LEAN wird bestätigen, dass der Beweis stimmt, in dem er No goals
+ausgibt, das aber nicht Level complete steht weist darauf hin, dass noch etwas zu tun ist.
+
+In dieser Aufgabe muss das sorry später noch mit dem Beweis für die Aussage `h` ersetzt werden,
 die dann im weiterem Verlauf verwendet werden kann.
 
 Du brauchst für diesen Beweis weitere Sätze aus dem Modul `Nat` der
@@ -48,5 +54,6 @@ Conclusion "Beweis geschafft!"
 
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
+NewTactic «sorry»
 NewTheorem Nat.add_comm Nat.mul_comm Nat.mul_add
 -- NewDefinition Nat Add Eq

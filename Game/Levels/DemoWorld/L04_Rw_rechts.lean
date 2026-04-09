@@ -9,7 +9,7 @@ Introduction "Wir haben im vorherigem Level gesehen, dass für die Aussage `h: a
 `rw [h]`, in dem Beweisziel jedes `a` durch ein `b` ersetzt. Aber wie kann man jedes `b`
 durch ein `a` ersetzen? Dazu verwendet man den Befehl `rw ← h,`. Der Pfeil steht sozusagen
 dafür, dass LEAN die Aussage `h` von rechts nach links lesen soll. Du kannst den Pfeil mit
-`$\\setminus$ l` (backslash + klein L) schreiben.
+$\\setminus$ l (backslash + klein L) schreiben.
 
 Es ist nun wieder die gleiche Lean Aufgabe wie in Level $2$ gegeben. Du könntest
 diese genauso lösen wie zuvor, aber erkennst du auch einen weiteren Weg der `←` verwendet?

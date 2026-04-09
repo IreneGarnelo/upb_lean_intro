@@ -9,5 +9,5 @@ World "Natuerliche_Zahlen_Mult"
 Title "Natürliche Zahlen: Multiplikation"
 
 Introduction "
-TODO
+
 "

@@ -31,7 +31,7 @@ split,
 Kopiere dieses Gerüst, schau dir an was der erste Schritt bewirkt und
 ersetze dann die beiden `sorry` mit Beweisen.
 
-Seien $a, b in mathbb{N}$ mit $a+b+3=8$ und $a=b+1$. Dann ist $a=3$ und $b=2$.
+Seien $a, b \\in \\mathbb{N}$ mit $a+b+3=8$ und $a=b+1$. Dann ist $a=3$ und $b=2$.
 "
 
 Statement (a b : Nat) (h : a+b+3=8 ∧ a=b+1) : a=3 ∧ b=2 := by

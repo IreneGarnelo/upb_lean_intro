@@ -8,7 +8,7 @@ Title "Kürzen von Brüchen"
 Introduction "Zuletz zeigen wir, dass man Brüche kürzen kann. In diesem Beweis reicht es, mit `rw`
 zu arbeiten. Suche dir dazu aus der linken Spalte die richtigen Sätze aus.
 
-Für $x, y in F$ mit $y neq 0$ gilt: $frac{x cdot y}{y} = x$.
+Für $x, y \\in F$ mit $y \\neq 0$ gilt: $\\frac{x \\cdot y}{y} = x$.
 "
 
 Statement {F : Type} [Field F] (x y : F) (hy : y ≠ 0) : x * y / y = x := by

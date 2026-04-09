@@ -25,7 +25,7 @@ der zurzeit noch durch `sorry` platzhaltend 'gelöst' ist.
 
 Lösche dieses `sorry` und ergänze den Induktionsschritt.
 
-Seien $a, b in mathbb{N}$. Dann ist `succ`$(a)+b = $`succ`$(a+b)$.
+Seien $a, b \\in mathbb{N}$. Dann ist `succ`$(a)+b = $`succ`$(a+b)$.
 "
 
 Statement (a b: Nat) : succ a + b = succ (a + b) := by

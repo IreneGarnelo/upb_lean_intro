@@ -29,7 +29,7 @@ use [6]
 ```
 dann kannst du im Zwischenschritt nachvollziehen, was `use` verändert hat.
 
-Für welches $a in mathbb{N}$ kann der Beweis mit `repeat use [a]` gelöst werden?
+Für welches $a \\in mathbb{N}$ kann der Beweis mit `repeat use [a]` gelöst werden?
 "
 
 Statement : ∃ a b : Nat, a + b = 10 := by

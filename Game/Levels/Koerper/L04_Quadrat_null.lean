@@ -27,3 +27,4 @@ Conclusion "Beweis geschafft!"
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
 NewTheorem pow_two mul_eq_zero
+NewTactic cases

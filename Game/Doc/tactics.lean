@@ -248,6 +248,240 @@ zu lösen. Wichtig ist die Reihenfolge der Voraussetzungen.
 -/
 TacticDoc apply
 
+/-- Tactic : lhs
+## Anleitung
+Die Taktik `lhs` wird innerhalb von `conv` verwendet. Sie wählt die linke
+Seite einer Gleichung aus, sodass die folgenden Umformungen nur dort
+angewendet werden.
+## Beispiel
+Bei folgendem Zustand:
+```
+x y : ℕ
+h : x + y = y + x
+⊢ x + y = y + x
+```
+kann man mit
+```
+conv =>
+  lhs
+  rw [h]
+```
+nur die linke Seite des Zieles umformen. Das Ziel wird dadurch zu:
+```
+⊢ y + x = y + x
+```
+-/
+TacticDoc lhs
+
+/-- Tactic : simp
+## Anleitung
+Die Taktik `simp` vereinfacht das Beweisziel oder gegebene Aussagen
+automatisch mit bekannten Vereinfachungsregeln.
+Dazu gehören zum Beispiel Rechnungen mit `0`, `1` oder bereits bekannte
+Aussagen aus dem Beweiszustand.
+## Beispiel
+Bei folgendem Zustand:
+```
+a : ℕ
+⊢ a + 0 = a
+```
+schließt `simp` den Beweis direkt, da `a + 0` zu `a` vereinfacht wird.
+## Erweitert
+Mit `simp [h1, h2]` kann man angeben, dass zusätzlich bestimmte Aussagen
+oder Sätze zum Vereinfachen verwendet werden sollen.
+Mit `simp at h` wird nicht das Ziel, sondern die Aussage `h` vereinfacht.
+-/
+TacticDoc simp
+
+/-- Tactic : congrArg
+## Anleitung
+Mit `congrArg f h` wendet man eine Funktion `f` auf beide Seiten einer
+Gleichung `h` an. Aus `h : x = y` wird dann eine neue Aussage
+`f x = f y`.
+## Beispiel
+Bei folgendem Zustand:
+```
+a b : ℕ
+h : a = b
+⊢ succ a = succ b
+```
+kann
+```
+exact congrArg succ h
+```
+den Beweis lösen, da aus `a = b` direkt `succ a = succ b` folgt.
+-/
+TacticDoc congrArg
+
+/-- Tactic : constructor
+## Anleitung
+Die Taktik `constructor` wird verwendet, wenn das Beweisziel aus mehreren
+Teilen besteht, die einzeln gezeigt werden müssen.
+Dies ist zum Beispiel bei einer Und-Aussage (`∧`) der Fall.
+## Beispiel
+Bei folgendem Zustand:
+```
+a b : ℕ
+ha : a = 0
+hb : b = 0
+⊢ a = 0 ∧ b = 0
+```
+teilt `constructor` das Ziel in zwei Teilziele auf:
+```
+⊢ a = 0
+⊢ b = 0
+```
+Diese können dann nacheinander bewiesen werden.
+-/
+TacticDoc constructor
+
+/-- Tactic : intros
+## Anleitung
+Die Taktik `intros` führt mehrere Annahmen oder Variablen gleichzeitig ein.
+Sie ist also eine abgekürzte Form von mehreren Anwendungen von `intro`.
+## Beispiel
+Bei folgendem Zustand:
+```
+⊢ ∀ a b : ℕ, a = b → b = a
+```
+führt
+```
+intros a b h
+```
+zu dem Zustand:
+```
+a b : ℕ
+h : a = b
+⊢ b = a
+```
+-/
+TacticDoc intros
+
+/-- Tactic : left
+## Anleitung
+Die Taktik `left` wird verwendet, wenn das Ziel eine Oder-Aussage (`∨`) ist
+und man die linke Seite dieser Aussage zeigen möchte.
+## Beispiel
+Bei folgendem Zustand:
+```
+a b : ℕ
+ha : a = 0
+⊢ a = 0 ∨ b = 0
+```
+macht `left` aus dem Ziel:
+```
+⊢ a = 0
+```
+Danach kann der Beweis mit `exact ha` abgeschlossen werden.
+-/
+TacticDoc left
+
+/-- Tactic : rcases
+## Anleitung
+Die Taktik `rcases` zerlegt eine gegebene Aussage in ihre Bestandteile.
+Sie ist besonders nützlich bei Existenzaussagen (`∃`) und Aussagen mit
+mehreren Strukturen.
+## Beispiel
+Bei folgendem Zustand:
+```
+a : ℕ
+h : ∃ b : ℕ, a = b + 1
+⊢ a > 0
+```
+führt
+```
+rcases h with ⟨b, hb⟩
+```
+zu:
+```
+a b : ℕ
+hb : a = b + 1
+⊢ a > 0
+```
+Nun kann mit der konkreten Zahl `b` weitergearbeitet werden.
+-/
+TacticDoc rcases
+
+/-- Tactic : right
+## Anleitung
+Die Taktik `right` wird verwendet, wenn das Ziel eine Oder-Aussage (`∨`) ist
+und man die rechte Seite dieser Aussage zeigen möchte.
+## Beispiel
+Bei folgendem Zustand:
+```
+a b : ℕ
+hb : b = 0
+⊢ a = 0 ∨ b = 0
+```
+macht `right` aus dem Ziel:
+```
+⊢ b = 0
+```
+Danach kann der Beweis mit `exact hb` abgeschlossen werden.
+-/
+TacticDoc right
+
+/-- Tactic : rintro
+## Anleitung
+Die Taktik `rintro` führt Annahmen ein und zerlegt sie gleichzeitig nach
+einem vorgegebenen Muster.
+Sie verbindet also `intro` und zum Beispiel `rcases`.
+## Beispiel
+Bei folgendem Zustand:
+```
+⊢ (∃ a : ℕ, a = 0) → True
+```
+führt
+```
+rintro ⟨a, ha⟩
+```
+direkt zu:
+```
+a : ℕ
+ha : a = 0
+⊢ True
+```
+ohne dass zuerst eine Annahme eingeführt und danach noch separat zerlegt
+werden muss.
+-/
+TacticDoc rintro
+
+/-- Tactic: induction
+## Anleitung
+Die Taktik `induction` wird verwendet, um einen Beweis mit vollständiger
+Induktion über eine natürliche Zahl zu führen.
+Dabei entstehen meist zwei Teilziele:
+der Induktionsanfang und der Induktionsschritt.
+
+## Beispiel
+Bei folgendem Zustand:
+```
+⊢ ∀ n : ℕ, n + 0 = n
+```
+führt
+```
+intro n
+induction n with
+| zero =>
+```
+zunächst zum Induktionsanfang:
+```
+⊢ 0 + 0 = 0
+```
+und danach im Induktionsschritt zu einem Ziel der Form:
+```
+n : ℕ
+ih : n + 0 = n
+⊢ succ n + 0 = succ n
+```
+
+## Erweitert
+Im Induktionsschritt steht meist eine Induktionsvoraussetzung wie `ih`
+zur Verfügung. Diese kann dann verwendet werden, um den Beweis
+des Schrittes abzuschließen.
+-/
+TacticDoc induction
+
 /- Axiom : add_zero (a : nat) :
 a + 0 = a
 -/
@@ -403,3 +637,109 @@ TheoremDoc mul_assoc as "mul_assoc" in "Gruppen"
 /-- Inverse eines Produkts:
 für zwei Elemente `a` und `b` gilt `(a*b)^-1=b^-1*a^-1`. -/
 TheoremDoc mul_inv_rev as "mul_inv_rev" in "Gruppen"
+
+/-- Theorem : div_eq_mul_inv
+## Aussage
+Division entspricht Multiplikation mit dem Inversen.
+## Form
+a / b = a * b⁻¹
+-/
+TheoremDoc div_eq_mul_inv as "div_eq_mul_inv" in "Koerper"
+
+/-- Theorem : eq_inv_of_mul_eq_one_left
+## Aussage
+Wenn a * b = 1 gilt, dann ist a das Inverse von b.
+## Form
+a * b = 1 → a = b⁻¹
+-/
+TheoremDoc eq_inv_of_mul_eq_one_left as "eq_inv_of_mul_eq_one_left" in "Koerper"
+
+/-- Theorem : inv_inv
+## Aussage
+Das Inverse des Inversen ist wieder das ursprüngliche Element.
+## Form
+(a⁻¹)⁻¹ = a
+-/
+TheoremDoc inv_inv as "inv_inv" in "Koerper"
+
+/-- Theorem : mul_comm
+## Aussage
+Multiplikation ist kommutativ.
+## Form
+a * b = b * a
+-/
+TheoremDoc mul_comm as "mul_komm" in "Gruppen"
+
+/-- Theorem : mul_eq_zero
+## Aussage
+Ein Produkt ist genau dann 0, wenn einer der Faktoren 0 ist.
+## Form
+a * b = 0 ↔ a = 0 ∨ b = 0
+-/
+TheoremDoc mul_eq_zero as "mul_eq_zero" in "Koerper"
+
+/-- Theorem : mul_inv_cancel₀
+## Voraussetzung
+a ≠ 0
+## Aussage
+Ein Element mal sein Inverses ergibt 1.
+## Form
+a * a⁻¹ = 1
+-/
+TheoremDoc mul_inv_cancel₀ as "mul_inv_cancel₀" in "Koerper"
+
+/-- Theorem : pow_two
+## Aussage
+Die zweite Potenz entspricht der Multiplikation mit sich selbst.
+## Form
+a ^ 2 = a * a
+-/
+TheoremDoc pow_two as "pow_two" in "Natuerliche_Zahlen_Mult"
+
+/-- Theorem : MulZeroClass.mul_zero
+## Aussage
+Jedes Element mal 0 ergibt 0.
+## Form
+a * 0 = 0
+-/
+TheoremDoc MulZeroClass.mul_zero as "MulZeroClass.mul_zero" in "Gruppen"
+
+/-- Theorem : Nat.add_assoc
+## Aussage
+Addition ist assoziativ.
+## Form
+(a + b) + c = a + (b + c)
+-/
+TheoremDoc Nat.add_assoc as "Nat.add_assoc" in "Natuerliche_Zahlen_Add"
+
+/-- Theorem : Nat.add_succ
+## Aussage
+Addition mit dem Nachfolger rechts.
+## Form
+a + succ b = succ (a + b)
+-/
+TheoremDoc Nat.add_succ as "Nat.add_succ" in "Natuerliche_Zahlen_Add"
+
+/-- Theorem : Nat.add_zero
+## Aussage
+Addition mit 0 rechts verändert nichts.
+## Form
+a + 0 = a
+-/
+TheoremDoc Nat.add_zero as "Nat.add_zero" in "Natuerliche_Zahlen_Add"
+
+/-- Theorem : Nat.succ_add
+## Aussage
+Addition mit dem Nachfolger links.
+## Form
+succ a + b = succ (a + b)
+-/
+TheoremDoc Nat.succ_add as "Nat.succ_add" in "Natuerliche_Zahlen_Add"
+
+/-- Theorem : Nat.zero_add
+## Aussage
+Addition mit 0 links verändert nichts.
+## Form
+0 + a = a
+-/
+TheoremDoc Nat.zero_add as "Nat.zero_add" in "Natuerliche_Zahlen_Add"

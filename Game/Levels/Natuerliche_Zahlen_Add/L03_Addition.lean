@@ -8,8 +8,8 @@ Title "Addition natürlicher Zahlen"
 
 Introduction "Man kann die Addition zweier natürlichen Zahlen rekursiv anhand der Peano-Axiome
 definieren.
-- Für $a in N$ sei $a+0=a$
-- Für $a,d in N$ sei $a+$`succ`$(d) = $`succ`$(a+d)$
+- Für $a \\in N$ sei $a+0=a$
+- Für $a,d \\in N$ sei $a+$`succ`$(d) = $`succ`$(a+d)$
 
 Nach dem Prinzip der Induktion ist dann die Addition für alle Paare von natürlichen
 Zahlen definiert.

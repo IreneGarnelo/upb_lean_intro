@@ -4,7 +4,7 @@ open Nat
 World "Natuerliche_Zahlen_Add"
 Level 5
 
-Title "Die Zahl $1$"
+Title "Die Zahl 1"
 
 Introduction "Aus praktischen Gründen möchten wir nun dem Nachfolger von $0$ einen Namen
 geben. Diese Zahl nennen wir $1$ (in Lean `one`). Die Aussage `one = succ zero` heißt in

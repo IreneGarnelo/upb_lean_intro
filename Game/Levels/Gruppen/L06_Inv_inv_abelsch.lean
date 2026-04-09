@@ -51,6 +51,6 @@ Conclusion "Beweis geschafft!"
 /- Use these commands to add items to the game's inventory. TODO: do we need refl? -/
 
 NewTactic apply
-NewTheorem eq_inv_of_mul_eq_one_left
+NewTheorem eq_inv_of_mul_eq_one_left inv_comm_group_comm
 -- NewTheorem Nat.add_comm Nat.add_assoc
 -- NewDefinition Nat Add Eq

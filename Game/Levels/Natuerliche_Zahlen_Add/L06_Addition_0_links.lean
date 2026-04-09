@@ -18,11 +18,12 @@ Nachdem du den Befehl `induction a with` eingibst, wirst du in dem Beweiszustand
 sehen, dass du zwei Beweisziele hast: den Induktionsanfang und die
 Induktionsvoraussetzung. Um den Beweis übersichtlicher zu führen, kannst du
 die zwei Teile wiefolgt strukturieren:
-  `induction a with
+```
+  induction a with
   | zero =>
   | succ d hd =>
-
-Sei $a in \\mathbb{N}$. Dann ist $0+a=a$.
+```
+Sei $a \\in \\mathbb{N}$. Dann ist $0+a=a$.
 "
 
 Statement (a : Nat) : zero + a = a := by

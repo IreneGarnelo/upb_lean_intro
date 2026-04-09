@@ -44,7 +44,7 @@ Verwende nun `repeat` um den vorhandenen Beweis zu verkürzen.
 Noch eine Bemerkung: LEAN ist linksassoziativ. Das bedeutet, dass für LEAN
 $a+b+b$ das gleiche wie $(a+b)+c$ ist.
 
-Seien $a, b, c in \\mathbb{N}$. Dann ist $(a + b) + c = a + (b + c)$.
+Seien $a, b, c \\in \\mathbb{N}$. Dann ist $(a + b) + c = a + (b + c)$.
 "
 
 Statement (a b c : Nat) : (a + b) + c = a + (b + c) := by

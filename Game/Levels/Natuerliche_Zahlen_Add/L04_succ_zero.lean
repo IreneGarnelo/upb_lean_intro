@@ -10,7 +10,7 @@ Introduction "In diesem Level werden wir zeigen, dass Addition mit dem Nachfolge
 wir noch nicht formal als $1$ eingeführt haben), gleich dem Nachfolger der Zahl ist.
 Löse den Beweis mit `rw` und den verfügbaren Axiomen.
 
-Sei $a in \\mathbb{N}$. Dann ist $a+$`succ`$(0)=$`succ`$(a)$
+Sei $a \\in \\mathbb{N}$. Dann ist $a+$`succ`$(0)=$`succ`$(a)$
 "
 
 Statement (a : Nat) : a + succ zero = succ a := by

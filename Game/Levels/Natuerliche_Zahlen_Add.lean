@@ -1,4 +1,5 @@
 import Game.Levels.Natuerliche_Zahlen_Add.L01_Peano
+import Game.Levels.Natuerliche_Zahlen_Add.L02_Peano_2
 import Game.Levels.Natuerliche_Zahlen_Add.L03_Addition
 import Game.Levels.Natuerliche_Zahlen_Add.L04_succ_zero
 import Game.Levels.Natuerliche_Zahlen_Add.L05_Eins

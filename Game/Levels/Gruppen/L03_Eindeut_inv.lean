@@ -18,6 +18,10 @@ dabei jeweils wie du jede Eins ersetzt so, dass du zum Schluss das Beweisziel du
 anwenden von Assoziativität (`mul_assoc`) lösen kannst.
 
 Das Inverse eines Elements ist Eindeutig.
+
+Falls du rw auf eine konkrete Seite des Ziels anwenden möchtest kannst
+du die Taktik conv verwenden, schaue dir in der rechten
+Spalte an wie sie funktioniert.
 "
 
 Statement {G : Type} [Group G] (a b c : G)
